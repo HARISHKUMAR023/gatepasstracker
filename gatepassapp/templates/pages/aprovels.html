@@ -1,0 +1,37 @@
+
+
+{% extends "dashboard/dashboard.html" %}
+
+{% block content %}
+<div>
+    <div class="flex justify-center p-6">
+        <div class="flex space-x-2">
+          <!-- Step indicators -->
+          <div class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center">1</div>
+          <div class="w-12 h-12 rounded-full bg-gray-200 text-white flex items-center justify-center">2</div>
+          <div class="w-12 h-12 rounded-full bg-gray-200 text-white flex items-center justify-center">3</div>
+        </div>
+      </div>
+      
+      <!-- Step 1 -->
+      <div id="step1" class="p-6">
+        <h2 class="text-xl font-bold mb-4">Step 1</h2>
+        <!-- Form fields for step 1 -->
+        <!-- When the user completes this step, hide this div and show the next one -->
+      </div>
+      
+      <!-- Step 2 -->
+      <div id="step2" class="p-6 hidden">
+        <h2 class="text-xl font-bold mb-4">Step 2</h2>
+        <!-- Form fields for step 2 -->
+        <!-- When the user completes this step, hide this div and show the next one -->
+      </div>
+      
+      <!-- Step 3 -->
+      <div id="step3" class="p-6 hidden">
+        <h2 class="text-xl font-bold mb-4">Step 3</h2>
+        <!-- Form fields for step 3 -->
+        <!-- When the user completes this step, hide this div and show the next one -->
+      </div>
+</div>
+{% endblock %}

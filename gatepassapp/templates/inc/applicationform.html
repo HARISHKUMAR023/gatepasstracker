@@ -1,0 +1,56 @@
+
+{% extends "dashboard/dashboard.html" %}
+
+{% block content%}
+
+<div class="shadow-lg p-6 bg-white rounded-md ">
+    <h1 class="text-2xl font-bold mb-4 text-center">Gate pass Request Form</h1>
+
+    <form action="" method="post" class="space-y-4">
+        <div>
+            <label for="Name" class="block text-sm font-bold text-gray-700">Name</label>
+            <input type="text" id="Name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-300 focus:ring focus:ring-green-200 focus:ring-opacity-50">
+        </div>
+        <div>
+            <label for="RegNO" class="block text-sm font-bold text-gray-700">Rollnumber</label>
+            <input type="text" id="RegNO" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-300 focus:ring focus:ring-green-200 focus:ring-opacity-50">
+        </div>
+        <div>
+            <label for="department" class="block text-sm font-bold text-gray-700">Department</label>
+            <select id="department" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-300 focus:ring focus:ring-green-200 focus:ring-opacity-50">
+                <option value="MCA">MCA</option>
+                <option value="MBA">MBA</option>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="MECH">MECH</option>
+                <option value="EEE">EEE</option>
+            </select>
+        </div>
+        <div>
+            <label for="RegNO" class="block text-sm font-bold text-gray-700">Body content </label>
+            <textarea class="resize-none mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-300 focus:ring focus:ring-green-200 focus:ring-opacity-50" name="" id="" cols="30" rows="10"></textarea>
+         
+        </div>
+
+        <div class="flex items-center">
+            <input type="checkbox" id="declaration" name="declaration" class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded">
+            <label for="declaration" class="ml-2 block text-sm text-gray-900">
+                I declare that the information provided is accurate.
+            </label>
+        </div>
+
+        <div>
+           
+         <input class="bg-green-500 shadow-lg shadow-green-500/50 font-bold p-3  rounded text-white" type="submit" value="submit">
+         
+        </div>
+
+   
+    </form>
+</div>
+{% endblock %}
+
+
+
+
+

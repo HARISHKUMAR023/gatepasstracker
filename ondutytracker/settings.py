@@ -28,7 +28,7 @@ TAILWIND_APP_NAME = 'theme'
 NPM_BIN_PATH = 'npm.cmd'
 ALLOWED_HOSTS = []
 
-
+AUTH_USER_MODEL = 'gatepassapp.CustomUser'
 # Application definition
 
 INSTALLED_APPS = [

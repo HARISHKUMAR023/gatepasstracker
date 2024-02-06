@@ -1,10 +1,13 @@
 {% include "base/head.html" %}
 {%load static %}
-<div class="flex flex-row">
+<div class="flex flex-row  h-screen overflow-hidden">
     <div class=" bg-teal-900 ">
 {% include "inc/nav.html" %}
     </div>
-    <div class="basis-5/6">
+    <div class="basis-5/6  overflow-auto">
+        {% block content %}
+    
+        {% endblock %}
 
     </div>
 </div>
