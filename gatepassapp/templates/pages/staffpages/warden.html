@@ -1,0 +1,53 @@
+
+
+
+{% extends "inc/navbarcontent.html" %}
+
+{% block content %}
+{% if messages %}
+    <script>
+      {% for message in messages %}
+        alert("{{ message }}");
+      {% endfor %}
+    </script>
+  {% endif %}
+<div>
+    <table class="table-auto w-full">
+        <thead>
+          <tr>
+            <th class="px-4 py-2">Name</th>
+            <th class="px-4 py-2">Rollnumber</th>
+            <th class="px-4 py-2">Department</th>
+            <th class="px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+          <tr class="text-center">
+            <td class="border px-4 py-2 text-center">{{ student.Name }}</td>
+            <td class="border px-4 py-2 text-center">{{ student.Rollnumber }}</td>
+            <td class="border px-4 py-2 text-center">{{ student.Department }}</td>
+            <td class="border px-4 py-2 text-center">
+                <div class="flex flex-row">
+                  <form method="post" action="{% url 'approve_studentwarden' student.id %}">
+                    {% csrf_token %}
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                      Approve
+                    </button>
+                  </form>
+                  
+                  <form method="post" action="{% url 'rejection' student.id %}">
+                    {% csrf_token %}
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                      Reject
+                    </button>
+                  </form>
+                </div>
+          
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

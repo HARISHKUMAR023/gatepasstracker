@@ -9,10 +9,11 @@
     <nav class="flex-grow  shadow-lg px-4 ">
 
         <ul class="space-y-2 text-lg">
-            <li class="my-3 p-3"><a href="{% url 'applicationform' %}" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-house"></i> Home </a></li>
+            <li class="my-3 p-3"><a href="{% url 'chat' %}" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-house"></i> Home </a></li>
+            <li class="my-3 p-3"><a href="{% url 'applicationform' %}" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-house"></i> Pass apply</a></li>
             {% if user_type == 'teacher' %}
           
-            <li class="my-3 p-3"><a href="{% url 'approvals' %}" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2   rounded  "><i class="fa-solid fa-circle-check"></i> Approvel T </a></li>
+            <li class="my-3 p-3"><a href="{% url 'staff' %}" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2   rounded  "><i class="fa-solid fa-circle-check"></i> Approvel T </a></li>
             <li class="my-3 p-3"><a href="#" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2   rounded  "><i class="fa-solid fa-circle-check"></i> Status </a></li>
             <!-- Add more navigation items for 'Teacher' here -->
         {% elif user_type == "student" %}
@@ -20,12 +21,12 @@
             <li class="my-3 p-3"><a href="#" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-hourglass-end"></i> Apply Pass  </a></li>
             <li class="my-3 p-3"><a href="#" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2   rounded  "><i class="fa-solid fa-circle-check"></i> Status </a></li>
         {% elif user_type == "hod" %}
-        <li class="my-3 p-3"><a href="#" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-circle-check"></i> Approvel List </a></li>
+        <li class="my-3 p-3"><a href="{% url 'hod' %}" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-circle-check"></i> Approvel List </a></li>
         <li class="my-3 p-3"><a href="#" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2   rounded  "><i class="fa-solid fa-circle-check"></i> Status </a></li>
 
         {% elif user_type == "warden" %}
         <li class="my-3 p-3"><a href="{% url 'approvals' %}" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-hourglass-end"></i> Waiting List </a></li>
-        <li class="my-3 p-3"><a href="#" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-circle-check"></i> Approved </a></li>
+        <li class="my-3 p-3"><a href="{% url 'hod' %}"  class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-circle-check"></i> Approved </a></li>
         <li class="my-3 p-3"><a href="#" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2   rounded  "><i class="fa-solid fa-circle-check"></i> Status </a></li>
         {% else %}
         <li class="my-3 p-3"><a href="#" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-hourglass-end"></i> Help</a></li>
