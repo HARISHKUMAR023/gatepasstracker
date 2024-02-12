@@ -3,6 +3,36 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Student
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponse
+from twilio.rest import Client
+
+
+def send_sms(request, student_id):
+    student = get_object_or_404(Student, pk=student_id)
+
+    # Your Twilio credentials
+    account_sid = 'AC50662f4f946b263d3e60d3e911ea91c2'
+    auth_token = '9e54110861e00e35a4d4be228fb1506d'
+    twilio_phone_number = '+14325353444'
+
+    # Initialize Twilio client
+    client = Client(account_sid, auth_token)
+
+    # Compose the SMS message
+    message_body = f"Dear Parent, {student.Name} has been approved by the warden on today. Thank you!"
+
+    # Send the SMS
+    message = client.messages.create(
+        to='+916369145671',  # Replace with the parent's phone number
+        from_=twilio_phone_number,
+        body=message_body
+    )
+
+    return HttpResponse(f"SMS sent! SID: {message.sid}")
+
+
+
 
 def logout_view(request):
     logout(request)
@@ -172,8 +202,12 @@ def approve_studentwarden(request, student_id):
         messages.error(request, 'Student not found')
         return redirect('warden')  # or another view
 
-    # Assuming there's a field in your Student model for approval status (e.g., approved)
-    student.warden_approval= True
+    # Assuming there's a field in your Student model for warden approval status
+    student.warden_approval = True
     student.save()
+
+    # Assuming `send_sms` is a function that sends an SMS to the student's parent
+    send_sms(request, student_id)
+
     messages.success(request, 'Student approved successfully')
-    return redirect('warden') 
+    return redirect('warden')
