@@ -22,31 +22,39 @@
         </thead>
         <tbody>
           {% for student in students %}
-          <tr class="text-center">
-            <td class="border px-4 py-2 text-center">{{ student.Name }}</td>
-            <td class="border px-4 py-2 text-center">{{ student.Rollnumber }}</td>
-            <td class="border px-4 py-2 text-center">{{ student.Department }}</td>
-            <td class="border px-4 py-2 text-center">
-                <div class="flex flex-row">
-                  <form method="post" action="{% url 'approve_studenthod' student.id %}">
-                    {% csrf_token %}
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                      Approve
-                    </button>
-                  </form>
-                  
-                  <form method="post" action="{% url 'rejection' student.id %}">
-                    {% csrf_token %}
-                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                      Reject
-                    </button>
-                  </form>
-                </div>
-          
-            </td>
-          </tr>
+              {% if student %}
+                  <tr class="text-center">
+                      <td class="border px-4 py-2 text-center">{{ student.Name }}</td>
+                      <td class="border px-4 py-2 text-center">{{ student.Rollnumber }}</td>
+                      <td class="border px-4 py-2 text-center">{{ student.Department }}</td>
+                      <td class="border px-4 py-2 text-center">
+                          <div class="flex flex-row">
+                              <form method="post" action="{% url 'approve_studenthod' student.id %}">
+                                  {% csrf_token %}
+                                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                      Approve
+                                  </button>
+                              </form>
+      
+                              <form method="post" action="{% url 'rejection' student.id %}">
+                                  {% csrf_token %}
+                                  <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                      Reject
+                                  </button>
+                              </form>
+                          </div>
+                      </td>
+                  </tr>
+              {% else %}
+                  <tr class="text-center">
+                      <td colspan="4" class="border px-4 py-2 text-center">
+                          <h1>No data to display</h1>
+                      </td>
+                  </tr>
+              {% endif %}
           {% endfor %}
-        </tbody>
+      </tbody>
+      
       </table>
 </div>
 {% endblock %}
