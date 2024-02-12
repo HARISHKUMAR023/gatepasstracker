@@ -1,6 +1,36 @@
-<div class="h-3/6 w-3/6 m-10">
-    <canvas id="myChart" width="400" height="400"></canvas>
+<div class="grid grid-cols-4 gap-4 m-4">
+    <div class="bg-gradient-to-r from-cyan-500 to-blue-500 mr-4 p-4 rounded shadow-xl">
+     <h1 class="text-white"><i class="fa-solid fa-user"></i></h1>
+     <p class="text-white font-bold py-2"><span class="font-bold text-black">2000 </span>Pass Appyled</p>
+    </div>
+    <div class="bg-gradient-to-r from-green-400 to-green-800 mr-4 p-4 rounded shadow-xl">
+        <h1 class="text-white"><i class="fa-solid fa-user"></i></h1>
+        <p class="text-white font-bold py-2"><span class="font-bold text-black">2000 </span>Pass Rejected</p>
+       </div>
+       <div class="bg-gradient-to-r from-orange-400 to-orange-600 mr-4 p-4 rounded shadow-xl">
+        <h1 class="text-white"><i class="fa-solid fa-user"></i></h1>
+        <p class="text-white font-bold py-2"><span class="font-bold text-black">2000 </span>Pass Approved</p>
+       </div>
+       <div class="bg-gradient-to-r from-rose-400 to-rose-700 mr-4 p-4 rounded shadow-xl">
+        <h1 class="text-white"><i class="fa-solid fa-user"></i></h1>
+        <p class="text-white font-bold py-2"><span class="font-bold text-black">2000 </span>Total Student</p>
+       </div>
 </div>
+
+
+<div class="flex flex-row shadow-xl m-4 ">
+    <div class="h-2/5 w-2/5 m-10 rounded  ">
+        <canvas id="myChart" width="300" height="300"></canvas>
+    </div>
+    
+    <div class="h-2/5 w-2/5 m-10 rounded  ">
+        <canvas id="myChart2" width="300" height="300"></canvas>
+    </div>
+   
+    
+</div>
+
+
 
 
 <script>
@@ -9,17 +39,17 @@
         datasets: [{
             label: 'Gatepass Requests',
             data: [12, 19, 3, 5, 2],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Background color
+            backgroundColor: 'rgb(3, 255, 255)', // Background color
             borderColor: 'rgba(75, 192, 192, 1)', // Border color
             borderWidth: 1
         }]
     };
     
     // Get the canvas element
-    var ctx = document.getElementById('myChart').getContext('2d');
+    var ctx1 = document.getElementById('myChart').getContext('2d');
     
     // Create a bar chart
-    var myChart = new Chart(ctx, {
+    var myChart = new Chart(ctx1, {
         type: 'bar',
         data: gatepassData,
         options: {
@@ -31,4 +61,22 @@
         }
     });
 
+    var otherChartData = {
+        labels: ['#dc2f02', '#f48c06', '#4cc9f0'],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [300, 50, 100],
+            backgroundColor: ['rgb(0, 192, 57)', 'rgb(249, 82, 0)', 'rgb(247, 0, 81)'],
+            hoverOffset: 4
+        }]
+    };
+
+    // Get the canvas element for the second chart
+    var ctx2 = document.getElementById('myChart2').getContext('2d');
+
+    // Create a pie chart
+    var myChart2 = new Chart(ctx2, {
+        type: 'pie',
+        data: otherChartData,
+    });
 </script>
