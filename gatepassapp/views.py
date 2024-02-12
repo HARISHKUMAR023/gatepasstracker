@@ -20,11 +20,11 @@ def send_sms(request, student_id):
     client = Client(account_sid, auth_token)
 
     # Compose the SMS message
-    message_body = f"Dear Parent, {student.Name} has been approved by the warden on today. Thank you!"
+    message_body = f"Dear Parent, {student.Name} has been approved by the warden today. Thank you!"
 
     # Send the SMS
     message = client.messages.create(
-        to='+916369145671',  # Replace with the parent's phone number
+        to=f'+91{student.phone}',  # Use the correct attribute name 'phone'
         from_=twilio_phone_number,
         body=message_body
     )
@@ -47,10 +47,11 @@ def requestform(request):
         if request.method == "POST":
             name = request.POST.get('name')
             rollnumber = request.POST.get('rollnumber')
+            phone = request.POST.get('phone')
             email = request.POST.get('email')
             department = request.POST.get('department')
             information = request.POST.get('information')
-            student = Student.objects.create(Name=name , Rollnumber = rollnumber , Department = department , Infromation = information)
+            student = Student.objects.create(Name=name ,phone=phone, Rollnumber = rollnumber , Department = department , Infromation = information)
            
     except :
         messages.error(request,'Application form not submitted')

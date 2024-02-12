@@ -18,7 +18,7 @@
             <!-- Add more navigation items for 'Teacher' here -->
         {% elif user_type == "student" %}
             <!-- Navigation items for 'staff' -->
-            <li class="my-3 p-3"><a href="{% url 'applicationform' %}" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-house"></i> Pass apply</a></li>
+            <li class="my-3 p-3"><a href="{% url 'applicationform' %}" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-solid fa-user-tie"></i> Pass apply</a></li>
             <li class="my-3 p-3"><a href="#" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2   rounded  "><i class="fa-solid fa-circle-check"></i> Status </a></li>
         {% elif user_type == "hod" %}
         <li class="my-3 p-3"><a href="{% url 'hod' %}" class="text-white text-center font-semibold font-sans hover:bg-slate-400 px-9 py-2  rounded  "><i class="fa-regular fa-hourglass-half"></i> Wating Pass </a></li>

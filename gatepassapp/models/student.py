@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 import random
-
+from phonenumber_field.modelfields import PhoneNumberField
 class Student(models.Model):
     application_id = models.CharField(max_length=10, unique=True, blank=True)
     Name = models.CharField(max_length = 200)
     Rollnumber = models.CharField(max_length =100)
+    phone = PhoneNumberField(blank=True, null=True)
     email=models.EmailField(max_length=100, default='test@gmail.com')
     Department = models.CharField(max_length = 100)
     Infromation = models.TextField()
