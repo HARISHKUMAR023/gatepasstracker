@@ -1,13 +1,8 @@
 {% extends "inc/navbarcontent.html" %}
 {% block content %}
-
 {% include "pages/visual/visulation.html" %}
-
-
-
-
-
-
+{% endblock %}
+{% block scripts %}
 <script>
   window.botpressWebChat.init({
       "composerPlaceholder": "Gatepasstracker Bot",
@@ -27,5 +22,4 @@
   });
 </script>
         
-
 {% endblock %}

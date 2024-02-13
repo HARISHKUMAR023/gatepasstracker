@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     {% tailwind_css %}
+<!-- ========== Start stylesheet ========== -->
+<link rel="stylesheet" href="{% static 'css/main.css'  %}">
+<!-- ========== End stylesheet ========== -->
 
    
 <!-- ========== Start jquery ========== -->
@@ -23,12 +26,14 @@
 <script src="https://kit.fontawesome.com/65210e3c63.js" crossorigin="anonymous"></script>
 <!-- ========== End fontawesome ========== -->
 
+<!-- ========== Start botpress bot  ========== -->
 <script src="https://cdn.botpress.dev/webchat/v0/inject.js"></script>
-
-
 <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<!-- ========== End botpress bot  ========== -->
+
+
 
 </head>
 <body>
     
-    {% block scripts %}{% endblock %}
+ 
