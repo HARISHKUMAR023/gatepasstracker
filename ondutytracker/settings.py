@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-*2vfv9hr8-eeb4g(=z6_x8&^#s7gwp%#pzomoo2lgata4ea0qq
 CSRF_TRUSTED_ORIGINS = ['https://gatepasssona.azurewebsites.net']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 TAILWIND_APP_NAME = 'theme'
 NPM_BIN_PATH = 'npm.cmd'
 ALLOWED_HOSTS = ['gatepasssona.azurewebsites.net']
@@ -135,6 +136,8 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
