@@ -29,7 +29,7 @@ CSRF_TRUSTED_ORIGINS = ['https://gatepasssona.azurewebsites.net']
 DEBUG = True
 TAILWIND_APP_NAME = 'theme'
 NPM_BIN_PATH = 'npm.cmd'
-ALLOWED_HOSTS = ['gatepasssona.azurewebsites.net']
+ALLOWED_HOSTS = ['gatepasssona.azurewebsites.net','localhost', '127.0.0.1',]
 
 AUTH_USER_MODEL = 'gatepassapp.CustomUser'
 # Application definition
@@ -136,8 +136,8 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
