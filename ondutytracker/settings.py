@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*2vfv9hr8-eeb4g(=z6_x8&^#s7gwp%#pzomoo2lgata4ea0qq
 DEBUG = True
 TAILWIND_APP_NAME = 'theme'
 NPM_BIN_PATH = 'npm.cmd'
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gatepasssona.azurewebsites.net']
 
 AUTH_USER_MODEL = 'gatepassapp.CustomUser'
 # Application definition
