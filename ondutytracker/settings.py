@@ -22,8 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-*2vfv9hr8-eeb4g(=z6_x8&^#s7gwp%#pzomoo2lgata4ea0qq'
 
+CSRF_TRUSTED_ORIGINS = ['https://gatepasssona.azurewebsites.net']
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 TAILWIND_APP_NAME = 'theme'
 NPM_BIN_PATH = 'npm.cmd'
 ALLOWED_HOSTS = ['gatepasssona.azurewebsites.net']
