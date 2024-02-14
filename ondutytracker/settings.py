@@ -82,12 +82,16 @@ WSGI_APPLICATION = 'ondutytracker.wsgi.application'
 
 DATABASES = {
     'default': {
-       'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': 'root',
-        'PASSWORD': 'Harish023@',
-        'HOST':'localhost',
-        'PORT':'3306',
+       'ENGINE': 'mssql',
+        'PORT': '1433',
+        'NAME': 'student',
+        'USER': 'harish',
+        'PASSWORD': 'Punitha023@',
+        'HOST':'tcp:harishsql.database.windows.net',
+        'OPTIONS': {
+                'driver': 'ODBC Driver 18 for SQL Server',
+            },
+        
     }
 }
 
@@ -122,7 +126,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
