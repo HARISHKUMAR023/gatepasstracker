@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sona college hostel</title>
+    {%load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  
+    <!-- ========== Start navbar ========== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning" style="">
+        <div class="container-fluid">
+          {% comment %} <a class="navbar-brand" href="#">Navbar</a> {% endcomment %}
+          {% comment %} <img class="navbar-brand " src="{% static 'img/sonalogo.png' %}" alt="" style="width: 100px ; height: 100px;"  > {% endcomment %}
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="https://www.sonatech.ac.in/">Sona college webiste</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    <!-- ========== End navbar ========== -->
+    
+    <!-- ========== Start crouseuel ========== -->
+    <h1 class="text-center" style="position: absolute; top: 90px; z-index: 400; left: 400px; font-size: 80px ; font-weight: 800; border: 4px solid black; padding: 8px;">Sona college Hostel</h1>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="height: 50%; z-index: 100px;">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'img/sona.jpg' %}" class="d-block w-100 h-30" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/sona.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/hostel.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <!-- ========== End crouseuel ========== -->
+
+    <!-- ========== Start about ========== -->
+    <div class="py-10" style="background-color: #ffc107;; color: black; ">
+        <h3 class="text-center pt-8 fw-bold" style="font-size: 40px; font-weight: 700px; padding-top: 10px;">About Sona colleg Hostel</h3>
+        <p class="text-center " style="padding-left: 300px;  padding-right: 400px; font-size: 30px ; font-weight: 500;">Separate hostel facilities are available for Indian and International boys and girls. The hostel provides accommodation and nutritious food for all the students. The rooms are furnished with table, chair, cot and fan. </p>
+    </div>
+    <!-- ========== End about ========== -->
+    <!-- ========== Start hostel ========== -->
+    <div class="bg-Success">
+
+  
+    <h2 class="text-center fw-bold" style="background-color: green;">Hostel Fess Stucture </h2>
+    <div class="container-fluid ">
+       
+        <table class="table table-bordered table-condenced table-hover">
+            <thead class="thead-light">
+            <tr>
+              <th colspan="7">Indian Students</th>
+              <th colspan="2">International Hostel with<br>
+                                Attached    Bathroom</th>
+            </tr>
+            </thead>
+            <tbody><tr>
+              <th>Category</th>
+              <th>Two Member Room</th>
+              <th>Three Member Room</th>
+              <th>Four Member Room</th>
+              <th>Six Member Room</th>
+              <th>Dorm - Girls</th>
+              <th colspan="2">Four Member Room</th>
+              <th>Two Member Room</th>
+            </tr>
+            <tr>
+              <td>Room Rent</td>
+              <td>22000</td>
+              <td>15000</td>
+              <td>18000</td>
+              <td>14000</td>
+              <td>9000</td>
+              <td colspan="2">21000</td>
+              <td>29000</td>
+            </tr>
+            <tr>
+              <td>Electricity</td>
+              <td>11000</td>
+              <td>10000</td>
+              <td>10000</td>
+              <td>10000</td>
+              <td>9000</td>
+              <td colspan="2">12000</td>
+              <td>13000</td>
+            </tr>
+            <tr>
+              <td>Establishment</td>
+              <td>11000</td>
+              <td>12000</td>
+              <td>12000</td>
+              <td>10000</td>
+              <td>11000</td>
+              <td colspan="2">11000</td>
+              <td>13000</td>
+            </tr>
+            <tr>
+              <td>Mess</td>
+              <td>36000</td>
+              <td>36000</td>
+              <td>36000</td>
+              <td>36000</td>
+              <td>36000</td>
+              <td colspan="2">48000</td>
+              <td>48000</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>80000 </td>
+              <td>73000 </td>
+              <td>76000 </td>
+              <td>70000 </td>
+              <td>65000 </td>
+              <td colspan="2">92000 </td>
+              <td>103000 </td>
+            </tr>
+          </tbody></table>
+    </div>
+</div>
+    <!-- ========== End fress ========== -->
+   
+    <script>
+      window.botpressWebChat.init({
+          "composerPlaceholder": "Gatepasstracker Bot",
+          "botConversationDescription": "I am the bot , i can help you",
+          "botId": "371a70bd-4cac-4092-af9d-0d1e18fe0974",
+          "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+          "messagingUrl": "https://messaging.botpress.cloud",
+          "clientId": "371a70bd-4cac-4092-af9d-0d1e18fe0974",
+          "webhookId": "fee06fce-7a2f-459f-95dd-fb732c1eb82f",
+          "lazySocket": true,
+          "themeName": "prism",
+          "frontendVersion": "v1",
+          "showPoweredBy": true,
+          "theme": "prism",
+          "themeColor": "#2563eb",
+          'stylesheet':'https://webchat-styler-css.botpress.app/prod/eb0a2e11-cfe5-431c-a785-dc706b37f4bc/v41076/style.css'
+      });
+    </script>
+</body>
+</html>

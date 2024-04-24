@@ -13,7 +13,7 @@ def send_sms(request, student_id):
 
     # Your Twilio credentials
     account_sid = 'AC50662f4f946b263d3e60d3e911ea91c2'
-    auth_token = '9e54110861e00e35a4d4be228fb1506d'
+    auth_token = 'e4020dbdbd80240fc4c00dd57febd026'
     twilio_phone_number = '+14325353444'
 
     # Initialize Twilio client
@@ -24,14 +24,16 @@ def send_sms(request, student_id):
 
     # Send the SMS
     message = client.messages.create(
-        to=f'+91{student.phone}',  # Use the correct attribute name 'phone'
+        to='+916382661208',
+        # to=f'+91{student.phone}',  # Use the correct attribute name 'phone'
         from_=twilio_phone_number,
         body=message_body
     )
 
     return HttpResponse(f"SMS sent! SID: {message.sid}")
 
-
+def website_view(request):
+    return render(request, 'home.html')
 
 
 def logout_view(request):

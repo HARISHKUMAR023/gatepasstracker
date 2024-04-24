@@ -19,6 +19,7 @@
             <th class="px-4 py-2">Name</th>
             <th class="px-4 py-2">Rollnumber</th>
             <th class="px-4 py-2">Department</th>
+            <th class="px-4 py-2">Restion</th>
             <th class="px-4 py-2">Actions</th>
           </tr>
         </thead>
@@ -29,6 +30,7 @@
             <td class="border px-4 py-2 text-center">{{ student.Name }}</td>
             <td class="border px-4 py-2 text-center">{{ student.Rollnumber }}</td>
             <td class="border px-4 py-2 text-center">{{ student.Department }}</td>
+            <td class="border px-4 py-2 text-center">{{ student.Infromation }}</td>
             <td class="border px-4 py-2 text-center">
                 <div class="flex flex-row">
                   <form method="post" action="{% url 'approve_studentstaff' student.id %}" class="p-2">
